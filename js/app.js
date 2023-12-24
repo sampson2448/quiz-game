@@ -1,4 +1,5 @@
-console.log("connected")
+import {mainQuotes} from "../data/quotes.js"
+console.log(mainQuotes)
 /*-------------------------------- Constants --------------------------------*/
 
 /*---------------------------- Variables (state) ----------------------------*/
