@@ -1,0 +1,16 @@
+html{
+  height: 100%;
+}
+body{
+  background-image: url('/imgs/background.jpeg');
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center top;
+
+
+ 
+}
+
+#title{
+  text-align: center;
+}
