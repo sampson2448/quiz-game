@@ -10,8 +10,10 @@ body{
 
 #title{
   text-align: center;
-  font-family: 'Bungee Spice', sans-serif;
 }
+
+
+/* -------------------------- Button----------------------------*/
 #changing-button{
 position: fixed;
 bottom: 0;
@@ -20,5 +22,33 @@ right: 0;
 padding: 2vh;
 background-color: navy ;
 color: whitesmoke;
-font-family: 'Bungee Spice', sans-serif;
+
 }
+
+.game-font{
+  font-family: 'Bungee Spice', sans-serif;
+}
+
+
+/* --------------------------Rotating Intro----------------------------*/
+
+.welcome{
+  animation-name: loop;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  position: absolute;
+  top: 45%;
+  left: 41%;
+  font-size: 1.5rem;
+}
+.welcome h3{
+width: 20vw;
+
+}
+@keyframes loop{
+0% {  transform: rotate(0deg); font-size: 2.5rem; top: 0; opacity: 1; }
+25%{  transform: rotate(90deg);  font-size: 2rem; top:15%; opacity: 0.75;}
+50%{  transform: rotate(180deg);  font-size: 1.75rem; top: 30%; opacity: .5;}
+80%{  transform: rotate(360deg); font-size: 1.5rem; top: 45%; opacity: 0;}
+}
+
