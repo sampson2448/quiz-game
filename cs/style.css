@@ -6,11 +6,19 @@ body{
  background-size: cover;
  background-repeat: no-repeat;
  background-position: center top;
-
-
- 
 }
 
 #title{
   text-align: center;
+  font-family: 'Bungee Spice', sans-serif;
+}
+#changing-button{
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+padding: 2vh;
+background-color: navy ;
+color: whitesmoke;
+font-family: 'Bungee Spice', sans-serif;
 }
