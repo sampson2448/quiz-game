@@ -17,7 +17,7 @@ cursor: pointer;
 
 
 /* -------------------------- Button----------------------------*/
-#changing-button{
+#shifting-button{
 position: fixed;
 bottom: 0;
 left: 0;
@@ -29,17 +29,19 @@ border-color:orangered ;
 
 }
 
+
 .game-font{
   font-family: 'Bungee Spice', sans-serif;
 }
+
 .hide{
   display: none;
 }
 
-/* --------------------------Rotating Intro----------------------------*/
+/* --------------------------Transition and Transforming Effects----------------------------*/
 
 #welcome{
-  animation-name: loop;
+  animation-name: welcome;
   animation-duration: 5s;
   animation-iteration-count: 1;
   position: absolute;
@@ -47,14 +49,34 @@ border-color:orangered ;
   left: 41%;
   font-size: 1.5rem;
 }
+
+#rendered-rules p{
+  animation-name: rules;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  position:relative ;
+  text-align: center;
+  }
+
 #welcome h3{
 width: 20vw;
 }
+#render-rules span{
+  margin-top: 20vh;
+}
 
-@keyframes loop{
+@keyframes welcome{
 0% {  transform: rotate(0deg); font-size: 2.5rem; top: 0; opacity: 1; }
 25%{  transform: rotate(90deg);  font-size: 2rem; top:15%; opacity: 0.75;}
 50%{  transform: rotate(180deg);  font-size: 1.75rem; top: 30%; opacity: .5;}
 80%{  transform: rotate(360deg); font-size: 1.5rem; top: 45%; opacity: 0;}
 }
+
+@keyframes rules{
+0%{  font-size: 0px; }
+25%{ font-size: 5px; }
+50%{ font-size: 10px;    }
+75%{ font-size: 15px;}
+}
+
 
