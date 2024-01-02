@@ -44,6 +44,7 @@ let hideContent = (e)=>{
   e.classList.add("hide")
  
 }
-let showContent = ()=>{
+let showContent = (e)=>{
+  e.classList.remove("hide")
 
 }
