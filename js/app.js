@@ -7,10 +7,10 @@ import {mainQuotes} from "../data/quotes.js"
 const btn = document.querySelector("#shifting-button")
 const welcome= document.querySelector("#welcome")
 /*----------------------------- Event Listeners -----------------------------*/
-console.log(btn.innerText)
-btn.addEventListener("click",(e)=>{
+btn.addEventListener("click",()=>{
   if( btn.innerText == "Rules Of The Game" ){
     hideContent(welcome)
+    btn.innerText= "start the game"
     renderRules() 
   }else{
     const rules=document.querySelector('#rendered-rules')
@@ -42,7 +42,6 @@ function renderGame(){
 let hideContent = (e)=>{
   console.log(e)
   e.classList.add("hide")
-  btn.innerText= "start the game"
  
 }
 let showContent = ()=>{
