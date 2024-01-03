@@ -79,4 +79,11 @@ width: 20vw;
 75%{ font-size: 15px;}
 }
 
+/* -------------------------- Counter Display ----------------------------*/
+#counter-container{
+  text-align: center;
+  font-family: 'Bungee Spice', sans-serif;
+
+
+}
 

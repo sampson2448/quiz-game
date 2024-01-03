@@ -2,10 +2,15 @@
 import {mainQuotes} from "../data/quotes.js"
 
 /*---------------------------- Variables ----------------------------*/
+let counter=0
+let timesUsed=0
+let theSelectedQuestion
 
 /*------------------------ Cached Element References ------------------------*/
 const btn = document.querySelector("#shifting-button")
 const welcome= document.querySelector("#welcome")
+let counterContainer= document.querySelector('#counter-container')
+
 /*----------------------------- Event Listeners -----------------------------*/
 btn.addEventListener("click",()=>{
   if( btn.innerText == "Rules Of The Game" ){
@@ -36,6 +41,7 @@ function renderGame(){
   div.setAttribute('id','')
   div.innerHTML= "<p> connected</p>"
   welcome.parentElement.append(div)
+  showContent(counterContainer)
 }
 
 
@@ -44,6 +50,7 @@ let hideContent = (e)=>{
   e.classList.add("hide")
  
 }
+
 let showContent = (e)=>{
   e.classList.remove("hide")
 
