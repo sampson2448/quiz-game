@@ -41,7 +41,7 @@ border-color:orangered ;
 /* --------------------------Transition and Transforming Effects----------------------------*/
 
 #first-page{
-  animation-name: welcome;
+  animation-name: first-page;
   animation-duration: 5s;
   animation-iteration-count: 1;
   position: absolute;
@@ -85,3 +85,51 @@ width: 20vw;
   font-family: 'Bungee Spice', sans-serif;
 }
 
+/* -------------------------- Card Creation----------------------------*/
+#game-container{
+  height: 50vh;
+  background-color: red;
+ margin:  20vh auto 0 auto;
+ opacity: .5;
+}
+.card-container{
+  display: flex;
+}
+
+button {
+  margin: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  margin: 0 auto;
+  border-radius: 5px;
+  text-align: center;
+}
+.card img{
+  width: 300px;
+  height: 300px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card p{
+  overflow-wrap: break-word;
+}
+.container {
+  padding: 2px 16px;
+}
+.card h4{
+  border: 2px solid black;
+  margin: 0;
+  font-family: 'Bungee Spice', sans-serif;
+  background-color: steelblue;
+}
