@@ -11,7 +11,7 @@ const btn = document.querySelector("#shifting-button")
 const firstPage= document.querySelector("#first-page")
 const welcome= document.querySelector("#welcome")
 const gameStarter= document.querySelector("#game-starter")
-const questionDisplayStarter= document.querySelector("#question-display-starter")
+const questionDisplayStarter= document.querySelector("#question-display-container")
 
 const questionDisplayDiv = document.querySelector('#question-display')
 let counterContainer= document.querySelector('#counter-container')
