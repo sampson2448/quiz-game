@@ -10,6 +10,8 @@ let theSelectedQuestion
 const btn = document.querySelector("#shifting-button")
 const welcome= document.querySelector("#welcome")
 let counterContainer= document.querySelector('#counter-container')
+let counterSpan = document.querySelector('#counter-value')
+
 
 /*----------------------------- Event Listeners -----------------------------*/
 btn.addEventListener("click",()=>{
