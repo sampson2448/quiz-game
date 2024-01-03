@@ -78,6 +78,11 @@ theSelectedQuestion = selectedQuestion
 displayQuestion(selectedQuestion)
 createCard(shuffledArrayList)
 }
+
+// Take onClick value and the question
+function clickedName(e){
+  isItRight(e,theSelectedQuestion.quote)
+  }
     // display the name of the question
     function displayQuestion(question){
       questionDisplayDiv.innerHTML= `<h2>${question.quote}</h2>`

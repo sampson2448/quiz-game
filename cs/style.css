@@ -133,3 +133,19 @@ button {
   font-family: 'Bungee Spice', sans-serif;
   background-color: steelblue;
 }
+
+/* -------------------------- Question Display ----------------------------*/
+
+#question-display{
+  position: absolute;
+  top: 80%;
+  left: 48.5%;
+  }
+  
+  .game-font{
+      font-family: 'Bungee Spice', sans-serif;
+  }
+  #question-display{
+      font-family: 'Montserrat', sans-serif;
+  }
+  
