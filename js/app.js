@@ -1,5 +1,5 @@
 /*-------------------------------- Constants --------------------------------*/
-import {mainQuotes} from "../data/quotes.js"
+import {quotesArray} from "../data/quotes.js"
 
 /*---------------------------- Variables ----------------------------*/
 let counter=0
@@ -8,6 +8,7 @@ let theSelectedQuestion
 
 /*------------------------ Cached Element References ------------------------*/
 const btn = document.querySelector("#shifting-button")
+const firstPage= document.querySelector("#first-page")
 const welcome= document.querySelector("#welcome")
 let counterContainer= document.querySelector('#counter-container')
 let counterSpan = document.querySelector('#counter-value')
@@ -17,7 +18,7 @@ let cardContainer= document.querySelector('.card-container')
 /*----------------------------- Event Listeners -----------------------------*/
 btn.addEventListener("click",()=>{
   if( btn.innerText == "Rules Of The Game" ){
-    hideContent(welcome)
+    hideContent(firstPage)
     btn.innerText= "start the game"
     renderRules() 
   }else{
@@ -41,11 +42,7 @@ function renderRules(){
 
 
 function renderGame(){
-  let div= document.createElement("div")
-  div.classList.add("game-font")
-  div.setAttribute('id','')
-  div.innerHTML= "<p> connected</p>"
-  welcome.parentElement.append(div)
+ 
   showContent(counterContainer)
 }
 

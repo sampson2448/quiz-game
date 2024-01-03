@@ -40,7 +40,7 @@ border-color:orangered ;
 
 /* --------------------------Transition and Transforming Effects----------------------------*/
 
-#welcome{
+#first-page{
   animation-name: welcome;
   animation-duration: 5s;
   animation-iteration-count: 1;
@@ -58,14 +58,14 @@ border-color:orangered ;
   text-align: center;
   }
 
-#welcome h3{
+#first-page h3{
 width: 20vw;
 }
 #render-rules span{
   margin-top: 20vh;
 }
 
-@keyframes welcome{
+@keyframes first-page{
 0% {  transform: rotate(0deg); font-size: 2.5rem; top: 0; opacity: 1; }
 25%{  transform: rotate(90deg);  font-size: 2rem; top:15%; opacity: 0.75;}
 50%{  transform: rotate(180deg);  font-size: 1.75rem; top: 30%; opacity: .5;}
@@ -83,7 +83,5 @@ width: 20vw;
 #counter-container{
   text-align: center;
   font-family: 'Bungee Spice', sans-serif;
-
-
 }
 

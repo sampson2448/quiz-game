@@ -16,13 +16,27 @@
         <h1>Quiz Game</h1>
     </div>
     <div id="counter-container" class="hide"><h1>Amount Right in a row = <span id="counter-value">0</span></h1></div>
-
+    <div id="welcome"></div>
     <div id="container">  
-        <div class="game-font" id="welcome">
+        <div class="game-font" id="first-page">
             <h3>Welcome to the quiz game where you must guess three in a row or...</h3>
         </div>
     </div>
-
+    <div class="hide">
+        <div id="fire-round-container" class="">
+          <div class="card game-font">
+          <img src="./imgs/reindeer.gif" alt="Reindeer">
+          <br/>
+          <button onclick="finalTest('Reindeer')" class="fire-button">Reindeer</button>
+          </div>
+          <div  class="card game-font">
+          <img src="./imgs/germanShepherd.gif" alt="">
+          <br/>
+          <button onclick="finalTest('German Shepherd')" class="fire-button">German Shepherd<button>
+          </div>
+        </div>
+      </div>
     <button class="game-font btn" id="shifting-button">Rules Of The Game</button>
+    <div id="question-display"></div>
 </body>
 </html>
