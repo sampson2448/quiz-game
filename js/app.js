@@ -79,7 +79,6 @@ function renderRules(){
     // display the name of the question
     function displayQuestion(question){
      questionDisplayDiv.innerHTML= `<h2>${question.quote}</h2>`
-     console.log(question)
 
     }
 // Take onClick value and the question
@@ -177,7 +176,6 @@ let hideContent = (e)=>{
   e.classList.remove('hide')
   }
 
- console.log(counter)
 shuffle(quotesArray)
 
 
@@ -196,5 +194,3 @@ deer.addEventListener("click", function(evt){
   deerSay.play()
 
 })
-
-console.log(fireRound.parentElement)
