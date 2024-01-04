@@ -13,6 +13,8 @@ Quiz Game is a game created of quotes from our best and brightest in the world! 
 * JavaScript
 * Git
 
+## Attributions
+https://www.kirupa.com/html5/css_transitions_cheatsheet.htm
 
 ## Icebox
 * Reduce the amount of code so my project code will become more readable
