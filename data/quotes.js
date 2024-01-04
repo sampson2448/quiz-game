@@ -1,13 +1,28 @@
  
  let quotesArray = [
-  {quote:"one",name:'one',img:'https://www.pngall.com/wp-content/uploads/5/Pokemon-Pikachu-PNG-Download-Image.png'},
-  {quote:"two",name:'two',img:'https://media.licdn.com/dms/image/D4E03AQFNuPUNobBXsg/profile-displayphoto-shrink_800_800/0/1691530436198?e=2147483647&v=beta&t=o019qzRquKm0ccZ8t7dElpJRffmRjgLFpqymWyxPTKk'},
-  {quote:"three",name:'three',img:'https://media.licdn.com/dms/image/D4E03AQFNuPUNobBXsg/profile-displayphoto-shrink_800_800/0/1691530436198?e=2147483647&v=beta&t=o019qzRquKm0ccZ8t7dElpJRffmRjgLFpqymWyxPTKk'},
-  {quote:"four",name:'four',img:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww'},
-  {quote:"five",name:'five',img:'https://pngimg.com/d/pokemon_PNG51.png'},
-  {quote:"six",name:'six',img:'https://pngimg.com/d/pokemon_PNG52.png'},
-  {quote:"seven",name:'seven',img:'https://i.pinimg.com/originals/85/1e/cf/851ecf1b1c06cb071c37fb3c6de2ea4a.jpg'},
-  {quote:"eight",name:'eight',img:'https://cdn.freebiesupply.com/logos/large/2x/pokemon-17-logo-png-transparent.png'}
+  {quote:"i was coding from a beach on my honeymoon, it was the best vacation ever",name:"Ben",img:"../imgs/Ben.png"},
+  {quote:"Mario was only poppin shrooms when I was playing this game.",name:"Nat",img:"../imgs/Nat.png"},
+  {quote:"Heres an example project from Dave. Its great. Also dont do this part like he did because thats stupid.",name:"Ben",img:"../imgs/Ben.png"},
+  {quote:"Dont do work ever for any reason",name:"Jason",img:"../imgs/Jason.png"},
+  {quote:"other people use that because its more efficient. but we dont care about that",name:"Ben",img:"../imgs/Ben.png"},
+  {quote:"a close mouth dont get feed",name:"MarKayla",img:"./imgs/MarKayla.png"},
+  {quote:"This suffering for silence shit is for the birds.",name:"Jurgen",img:"./imgs/Jurgen.png"},
+  {quote:"you dont have to be Canadian to love curling",name:"Steve",img:"../imgs/Steve.png"},
+  {quote:"My subconscious made a really good joke while i was dreaming...dress your baby up as a goat I dont want a kid!",name:"Krystal",img:"../imgs/Krystal.png"},
+  {quote:"Music expresses that which cannot be put into words and that which cannot remain silent",name:"Victor",img:"../imgs/Victor.png"},
+  {quote:"you can cage the singer but not the song",name:"Harry",img:"../imgs/Harry.png"},
+  {quote:"Live for each second without hesitation",name:"Elton",img:"../imgs/Elton.jpeg"},
+  {quote:"Behind every great man is a woman rolling her eyes",name:"Jim",img:"../imgs/Jim.jpeg"},
+  {quote:"If you can dream it, you can do it",name:"Walt",img:"../imgs/Walt.png"},
+  {quote:"You can have it all. You just cant have it all at once",name:"Oprah",img:"../imgs/Oprah.png"},
+  {quote:"Your time is limited, so dont waste it living someone elses life",name:"Steve Jobs",img:"../imgs/SteveJobs.png"},
+  {quote:"One good thing about music, when it hits you, you feel no pain",name:"Bob",img:"../imgs/Bob.png"},
+  {quote:"IF life gives you lemons make some kind of fruity juice",name:"Conan",img:"../imgs/Conan.png"},
+  {quote:"My friends tell me I have an intimacy problem. But they dont know me",name:"Garry",img:"../imgs/Garry.jpeg"},
+  {quote:"Gravitation can not be held responsible for people falling in love",name:"Albert",img:"../imgs/Albert.png"},
+  {quote:"Have no fear of perfection, youll never reach it",name:"Salvador",img:"../imgs/Salvador.png"},
+
 ]
 
 export default quotesArray
+

@@ -161,7 +161,7 @@ body.append(button)
 
  function finalTestRules(){
     hideContent(questionDisplayDiv)
-    counterContainer.innerText= "You have cleared the 3 in a row condidtion"
+    counterContainer.innerText= "You have cleared the 3 in a row condition"
     let testDiv= document.createElement("div")
     testDiv.classList.add("card-container")
     testDiv.innerHTML= `<div id='final-rules'><h1> Final Round: click the correct keys to win.<br/> You lose if not entered correctly and or time runs out<br/> <button id='timer' onclick='finalTest()'>I understand</button></h1></div>`
