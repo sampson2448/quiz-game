@@ -153,7 +153,7 @@ body.style.backgroundRepeat = "no-repeat"
 body.style.backgroundPosition = "bottom";  // The background image will be centered
 body.style.backgroundSize = "cover"
 body.style.height="100vh"
-body.append(button)
+body.append(finalButton)
 
 
 
