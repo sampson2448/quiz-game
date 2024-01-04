@@ -15,7 +15,7 @@
   {quote:"You can have it all. You just cant have it all at once",name:"Oprah",img:"../imgs/Oprah.png"},
   {quote:"Your time is limited, so dont waste it living someone elses life",name:"Steve Jobs",img:"../imgs/SteveJobs.png"},
   {quote:"One good thing about music, when it hits you, you feel no pain",name:"Bob",img:"../imgs/Bob.png"},
-  {quote:"IF life gives you lemons make some kind of fruity juice",name:"Conan",img:"../imgs/Conan.png"},
+  {quote:"If life gives you lemons make some kind of fruity juice",name:"Conan",img:"../imgs/Conan.png"},
   {quote:"Heres an example project from Dave. Its great. Also dont do this part like he did because thats stupid.",name:"Ben",img:"../imgs/Ben.png"},
   {quote:"My friends tell me I have an intimacy problem. But they dont know me",name:"Garry",img:"../imgs/Garry.jpeg"},
   {quote:"Gravitation can not be held responsible for people falling in love",name:"Albert",img:"../imgs/Albert.png"},

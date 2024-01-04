@@ -13,7 +13,7 @@ import quotesArray from "../data/quotes.js"
     const dog = document.querySelector('#dog')   
     const deer = document.querySelector('#deer')
     const dogSay = new Audio("../music/dog.mp3")
-    const deerSay = new Audio("../music/deer.dodmp3")
+    const deerSay = new Audio("../music/deer.mp3")
 
     btn.addEventListener("click",()=>{
         if( btn.innerText == "Rules Of The Game" ){
@@ -190,7 +190,6 @@ function winOrLose(){
 dog.addEventListener("click", function(evt){
   dogSay.volume = .05
   dogSay.play()
-  dogSay.duration("3s")
 })
 deer.addEventListener("click", function(evt){
   deerSay.volume = .05
