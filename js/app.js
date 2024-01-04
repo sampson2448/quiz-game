@@ -1,29 +1,34 @@
 import quotesArray from "../data/quotes.js"
 
-
+    let loseBackground="url('./imgs/lose.gif')"
+    let winBackground="url('./imgs/win.gif')"
+    let  mainBackground="url(/imgs/background.jpeg)"
     let welcome= document.querySelector('#welcome')
     const questionDisplayDiv = document.querySelector('#question-display')
     let theSelectedQuestion
     let counter=0
+    window.counter=counter
     let counterContainer= document.querySelector('#counter-container')
     let counterSpan = document.querySelector('#counter-value')
     let fireRound= document.querySelector('#fire-round-container')
-    const btn = document.querySelector("#shifting-button")
+    const shiftingButton = document.querySelector("#shifting-button")
     const firstPage= document.querySelector("#first-page")
     const dog = document.querySelector('#dog')   
     const deer = document.querySelector('#deer')
     const dogSay = new Audio("../music/dog.mp3")
     const deerSay = new Audio("../music/deer.mp3")
-
-    btn.addEventListener("click",()=>{
-        if( btn.innerText == "Rules Of The Game" ){
+    const body=document.querySelector('body')
+    let threeInARow = document.querySelector('#three-in-a-row-container')
+console.log(counter)
+    shiftingButton.addEventListener("click",()=>{
+        if( shiftingButton.innerText == "Rules Of The Game" ){
           hideContent(firstPage)
-          btn.innerText= "start the game"
+          shiftingButton.innerText= "start the game"
           renderRules() 
         }else{
           const rules=document.querySelector('#rendered-rules')
           hideContent(rules)
-          hideContent(btn)
+          hideContent(shiftingButton)
           renderGame()
         }
       })
@@ -38,7 +43,7 @@ function renderRules(){
   }
   
   function renderGame(){
-    hideContent(btn) 
+    hideContent(shiftingButton) 
     showContent(questionDisplayDiv)
     showContent(welcome)
     showContent(counterContainer)
@@ -46,6 +51,8 @@ function renderRules(){
 
 
     function shuffle(allArr){
+ 
+
         let shuffleFormula= Math.floor(Math.random()* allArr.length)
         const shuffleQuotes = allArr.sort(() => shuffleFormula - Math.random()*quotesArray.length);
         const shuffledArrayList=[]
@@ -94,16 +101,25 @@ function resetCard(){
 }
 
  function isItRight(question,displayedQuestion){
-    if(displayedQuestion == question){
+  console.log(counter)
+
+ 
+  if(displayedQuestion == question){
      counter++
     counterDisplay(counter)
     resetCard()
+    console.log(counter)
+
     shuffle(quotesArray)
 
-    } if(displayedQuestion == question && counter==1){
-        resetCard()
+    } if(displayedQuestion == question && counter==2){
+      counterSpan.innerText=0
+      counter=0
+      resetCard()
         showContent(questionDisplayDiv)
         finalTestRules()
+        console.log(counter)
+
     }
     if(displayedQuestion != question){
         counter =0
@@ -122,20 +138,17 @@ function resetCard(){
 showContent(fireRound.parentElement)
 hideContent(welcome)
 hideContent(counterContainer)
+hideContent(threeInARow)
+let finalButton= document.createElement("button")
+finalButton.setAttribute("id","restart-button")
+finalButton.classList.add('restart-button')
+finalButton.classList.add('game-font')
 
-const body=document.querySelector('body')
-let button= document.createElement("button")
-button.classList.add('restart-button')
-button.classList.add('game-font')
-
-button.onclick=function(){
-    location.reload()
-}
 
 if(e=='Reindeer'){
 winOrLose()
-button.innerText='You win, try again?'
-body.style.backgroundImage="url('./imgs/win.gif')"
+finalButton.innerText='You win, try again?'
+body.style.backgroundImage=winBackground
 body.style.backgroundRepeat = "no-repeat" 
 body.style.backgroundPosition = "bottom";  // The background image will be centered
 body.style.backgroundSize = "cover"
@@ -146,24 +159,27 @@ body.append(button)
 
 }if(e=='German Shepherd'){
  winOrLose()
-body.style.backgroundImage="url('./imgs/lose.gif')"
-button.innerText='Start Over'
+body.style.backgroundImage=loseBackground
+finalButton.innerText='Start Over'
 body.style.backgroundRepeat = "no-repeat" 
 body.style.backgroundPosition = "center";  // The background image will be centered
 body.style.backgroundSize = "cover"
 body.style.height="100vh"
-body.append(button)
+body.append(finalButton)
 }
+finalButton.onclick=resetGame
 
 
 }
 
  function finalTestRules(){
     hideContent(questionDisplayDiv)
-    counterContainer.innerText= "You have cleared the 3 in a row condition"
+    hideContent(counterContainer)
+    showContent(threeInARow)
+    threeInARow.innerHTML="<h2>Congrats, you won three in a row</h2>"
     let testDiv= document.createElement("div")
     testDiv.classList.add("card-container")
-    testDiv.innerHTML= `<div id='final-rules'><h1> Final Round: click the correct keys to win.<br/> You lose if not entered correctly and or time runs out<br/> <button id='timer' onclick='finalTest()'>I understand</button></h1></div>`
+    testDiv.innerHTML= `<div id='final-rules'><h1> Final Round: click the correct keys to win.<br/> You lose if not entered correctly and or time runs out<br/> <button onclick='finalTest()'>I understand</button></h1></div>`
     welcome.append(testDiv)
 }
 
@@ -174,6 +190,9 @@ let hideContent = (e)=>{
   }
   let showContent = (e)=>{
   e.classList.remove('hide')
+  }
+  let deleteContent=(e)=>{
+    e.remove()
   }
 
 shuffle(quotesArray)
@@ -194,3 +213,21 @@ deer.addEventListener("click", function(evt){
   deerSay.play()
 
 })
+
+function resetGame(){
+let restartButton = document.querySelector("#restart-button")
+  body.style.backgroundImage=mainBackground
+  hideContent(counterContainer)
+  hideContent(welcome)
+  hideContent(questionDisplayDiv)
+  showContent(firstPage)
+  deleteContent(restartButton)
+  shiftingButton.innerText="Rules Of The Game"
+  showContent(shiftingButton)
+  deleteContent(document.querySelector('#rendered-rules'))
+  deleteContent(document.querySelector("#final-rules"))
+  deleteContent(document.querySelector(".card-container"))
+  shuffle(quotesArray)
+
+
+}

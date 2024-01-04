@@ -157,7 +157,14 @@ background-color: #eef1ff;
 
 }
 
+/* -------------------------- Three in a row  ----------------------------*/
 
+#three-in-a-row-container{
+  text-align: center;
+  font-family: 'Bungee Spice', sans-serif;
+font-size: 24px;
+
+}
 
 /* -------------------------- Final Test Rules ----------------------------*/
 #final-rules{
