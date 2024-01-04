@@ -5,17 +5,15 @@ import quotesArray from "../data/quotes.js"
     const questionDisplayDiv = document.querySelector('#question-display')
     let theSelectedQuestion
     let counter=0
-    let timesUsed=0
-    let cardContainer= document.querySelector('.card-container')
     let counterContainer= document.querySelector('#counter-container')
     let counterSpan = document.querySelector('#counter-value')
-    let myKeyDiv =document.querySelector('#my-keys')
     let fireRound= document.querySelector('#fire-round-container')
-    let finalRules= document.querySelector('#final-rules')
     const btn = document.querySelector("#shifting-button")
     const firstPage= document.querySelector("#first-page")
-
-
+    const dog = document.querySelector('#dog')   
+    const deer = document.querySelector('#deer')
+    const dogSay = new Audio("../music/dog.mp3")
+    const deerSay = new Audio("../music/deer.dodmp3")
 
     btn.addEventListener("click",()=>{
         if( btn.innerText == "Rules Of The Game" ){
@@ -51,11 +49,13 @@ function renderRules(){
         let shuffleFormula= Math.floor(Math.random()* allArr.length)
         const shuffleQuotes = allArr.sort(() => shuffleFormula - Math.random()*quotesArray.length);
         const shuffledArrayList=[]
-        for (let index = 0; index < 3; index++) {
+        for (let index = 0; index < allArr.length; index++) {
             const element = shuffleQuotes[index];
+            if(shuffledArrayList.length<3){
            shuffledArrayList.push(element)
-            
+            }
         }
+     
     let randomQuotesFormula=Math.floor(Math.random()* shuffledArrayList.length)
     let selectedQuestion =shuffledArrayList[randomQuotesFormula]
     theSelectedQuestion = selectedQuestion
@@ -101,7 +101,7 @@ function resetCard(){
     resetCard()
     shuffle(quotesArray)
 
-    } if(displayedQuestion == question && counter==3){
+    } if(displayedQuestion == question && counter==1){
         resetCard()
         showContent(questionDisplayDiv)
         finalTestRules()
@@ -187,6 +187,15 @@ function winOrLose(){
 }
 
 
+dog.addEventListener("click", function(evt){
+  dogSay.volume = .05
+  dogSay.play()
+  dogSay.duration("3s")
+})
+deer.addEventListener("click", function(evt){
+  deerSay.volume = .05
+  deerSay.play()
 
+})
 
 console.log(fireRound.parentElement)
