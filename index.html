@@ -1,52 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="/imgs/favicon.ico?v1" type="image/x-icon">
-  <link rel="stylesheet" href="/cs/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
-  <script defer type="module" src="./js/app.js"></script>
-  <title>Quiz Game</title>
-</head>
-<body>
-  
-  <div class="game-font" id="title">
-    <h1>Quiz Game</h1>
-</div>
-<div id="container">  
-    <div class="game-font" id="first-page">
-        <h3>Welcome to the quiz game where you must guess three in a row or...</h3>
-    </div>
-</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/imgs/favicon.ico?v1" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap"
+      rel="stylesheet"
+    />
+    <script defer type="module" src="./js/app.js"></script>
+    <title>Quiz Game</title>
+  </head>
 
-<button class="game-font btn" id="shifting-button">Rules Of The Game</button>
-  <div id="counter-container" class="hide"><h1>Amount Right in a row = <span id="counter-value">0</span></h1></div>
-  <div id="three-in-a-row-container" class="hide"></div>
-  <div id="welcome" class="hide">
-    
-  </div>
-  <div class="hide">
-    <div id="fire-question">
+  <body>
+    <div class="game-font" id="title">
+      <h1>Quiz Game</h1>
+    </div>
+    <div id="container">
+      <div class="game-font" id="home-page">
+        <h3>
+          Welcome to the quiz game where you must guess three in a row or...
+        </h3>
+      </div>
+    </div>
+    <button class="game-font btn" id="opening-button">
+      Rules Of The Game
+    </button>
+    <div id="counter-container" class="hide">
+      <h1>
+        Amount Right in a row =
+        <span id="counter-value"> 0 </span>
+      </h1>
+    </div>
+    <div id="three-in-a-row-container" class="hide"></div>
+    <div id="welcome" class="hide"></div>
+    <div class="hide">
+      <div id="fire-question">
         What's Faster A Reindeer or A German Shepherd
+      </div>
+      <div id="fire-round-container" class="">
+        <div class="card game-font">
+          <img src="./imgs/reindeer.gif" alt="Reindeer" />
+          <br />
+          <button id="deer" onclick="finalTest('Reindeer')" class="fire-button">
+            Reindeer
+          </button>
+        </div>
+        <div class="card game-font">
+          <img src="./imgs/germanShepherd.gif" alt="" />
+          <br />
+          <button
+            id="dog"
+            onclick="finalTest('German Shepherd')"
+            class="fire-button"
+          >
+            German Shepherd
+          </button>
+        </div>
+      </div>
     </div>
-  <div id="fire-round-container" class="">
- 
-    <div class="card game-font">
-    <img src="./imgs/reindeer.gif" alt="Reindeer">
-    <br/>
-    <button id="deer" onclick="finalTest('Reindeer')" class="fire-button">Reindeer</button>
-    </div>
-     <div  class="card game-font">
-    <img src="./imgs/germanShepherd.gif" alt="">
-    <br/>
-    <button id="dog" onclick="finalTest('German Shepherd')" class="fire-button">German Shepherd</button>
-    </div>
-  </div>
-</div>
-<div id="restart-button-div"></div>
-  <div id="question-display" class="hide"></div>
-</body>
+    <div id="restart-button-div"></div>
+    <div id="question-display" class="hide"></div>
+  </body>
 </html>
