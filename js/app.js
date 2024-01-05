@@ -164,7 +164,7 @@ function finalTestRules() {
   firstRoundCleared.innerHTML = "<h2>Congrats, you won three in a row</h2>";
   let testDiv = document.createElement("div");
   testDiv.classList.add("card-container");
-  testDiv.innerHTML = `<div id='final-rules'><h1> Final Round: click the correct keys to win.<br/> You lose if not entered correctly and or time runs out<br/> <button onclick='finalTest()'>I understand</button></h1></div>`;
+  testDiv.innerHTML = `<div id='final-rules'><h1> Final Round: Choose correctly and you win the game!<br/> Choose incorrectly and you must restart!<br/> <button onclick='finalTest()'>I understand</button></h1></div>`;
   quizGameDiv.append(testDiv);
 }
 // hide final round div
