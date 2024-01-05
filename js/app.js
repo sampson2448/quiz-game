@@ -120,7 +120,8 @@ function verifyAnswer(question, myAnswer) {
     shuffle(quotesArray);
   }
   if (myAnswer == question && counter == 2) {
-    counterSpan.innerText = 0;
+    counter = 0;
+    counterDisplay(counter);
     resetCard();
     showContent(questionDisplayDiv);
     finalTestRules();
