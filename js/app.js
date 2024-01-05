@@ -119,7 +119,7 @@ function verifyAnswer(question, myAnswer) {
     resetCard();
     shuffle(quotesArray);
   }
-  if (myAnswer == question && counter == 2) {
+  if (myAnswer == question && counter == 3) {
     counter = 0;
     counterDisplay(counter);
     resetCard();
