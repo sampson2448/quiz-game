@@ -41,17 +41,18 @@ button:hover {
   left: 41%;
   font-size: 1.5rem;
 }
-#rendered-rules p {
+#rendered-rules h2 {
+  background-color: black;
+  opacity: 0.9;
   animation-name: rules;
   animation-duration: 5s;
   animation-iteration-count: 1;
   position: relative;
   text-align: center;
 }
+
 #home-page h3 {
   width: 20vw;
-  background-color: black;
-  opacity: .9;
 }
 #render-rules span {
   margin-top: 20vh;
@@ -160,9 +161,9 @@ button {
   font-family: "Bungee Spice", sans-serif;
   font-size: 24px;
 }
-/* -------------------------- Three in a row  ----------------------------*/
+/* -------------------------- First Round Cleared  ----------------------------*/
 
-#three-in-a-row-container {
+#first-round-cleared {
   text-align: center;
   font-family: "Bungee Spice", sans-serif;
   font-size: 24px;
@@ -174,19 +175,8 @@ button {
   font-family: "Bungee Spice", sans-serif;
   font-weight: bolder;
 }
-#timer {
-  font-family: "Bungee Spice", sans-serif;
-}
 /* -------------------------- Final Test  ----------------------------*/
-#final-keys {
-  text-align: center;
-}
-#my-keys {
-  position: absolute;
-  top: 80%;
-  left: 48.5%;
-}
-#fire-round-container {
+#final-round-container {
   display: flex;
 }
 .restart-button {
@@ -194,7 +184,7 @@ button {
   position: absolute;
   top: 95%;
 }
-#fire-question {
+#final-question {
   text-align: center;
   font-family: "Bungee Spice", sans-serif;
   font-size: 35px;

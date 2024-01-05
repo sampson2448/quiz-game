@@ -14,14 +14,13 @@ const deerSay = new Audio("../music/deer.mp3");
 let loseBackground = "url('./imgs/lose.gif')";
 let winBackground = "url('./imgs/win.gif')";
 let mainBackground = "url(/imgs/background.jpeg)";
-let welcome = document.querySelector("#welcome");
+let quizGameDiv = document.querySelector("#quiz-game-div");
 let theSelectedQuestion;
 let counter = 0;
 let counterContainer = document.querySelector("#counter-container");
 let counterSpan = document.querySelector("#counter-value");
-let fireRound = document.querySelector("#fire-round-container");
-let threeInARow = document.querySelector("#three-in-a-row-container");
-window.counter = counter;
+let finalRound = document.querySelector("#final-round-container");
+let firstRoundCleared = document.querySelector("#first-round-cleared");
 
 /*--------- Event Listeners ---------*/
 
@@ -53,17 +52,19 @@ function renderRules() {
   let div = document.createElement("div");
   div.classList.add("game-font");
   div.setAttribute("id", "rendered-rules");
-  div.innerHTML = `<p>1.Click the my answer button to select the person you felt create the quote<br/>2.In order to win the game, you must have three answers correct in a row. <br/>3. Good Luck and have fun!</p>`;
-  welcome.parentElement.append(div);
+  div.innerHTML = `<h2>1.Click my answer to select who's the creator of the quote displayed<br/>2.To win the game, you must be correct three times in a row. <br/>3. Good Luck and have fun!</h2>`;
+  quizGameDiv.parentElement.append(div);
 }
-
+// hides the first two pages of the game and display the game
 function renderGame() {
   hideContent(openingButton);
+  globalCreator();
   showContent(questionDisplayDiv);
-  showContent(welcome);
+  showContent(quizGameDiv);
   showContent(counterContainer);
+  shuffle(quotesArray);
 }
-
+//Shuffle the array of quotes
 function shuffle(allArr) {
   let shuffleFormula = Math.floor(Math.random() * allArr.length);
   const shuffleQuotes = allArr.sort(
@@ -79,9 +80,8 @@ function shuffle(allArr) {
   let randomQuotesFormula = Math.floor(
     Math.random() * shuffledArrayList.length
   );
-  let selectedQuestion = shuffledArrayList[randomQuotesFormula];
-  theSelectedQuestion = selectedQuestion;
-  displayQuestion(selectedQuestion);
+  theSelectedQuestion = shuffledArrayList[randomQuotesFormula];
+  displayQuestion(shuffledArrayList[randomQuotesFormula]);
   createCard(shuffledArrayList);
 }
 
@@ -95,17 +95,15 @@ function createCard(e) {
     innerDiv.innerHTML = `<img src=${element.img} alt=Avatar/><h4>${element.name}</h4><button onclick='clickedName("${element.quote}")'>My answer</button>`;
     div.append(innerDiv);
   });
-  return welcome.append(div);
+  return quizGameDiv.append(div);
 }
 // display the name of the question
-function displayQuestion(question) {
-  questionDisplayDiv.innerHTML = `<h2>${question.quote}</h2>`;
+function displayQuestion(displayedQuestion) {
+  questionDisplayDiv.innerHTML = `<h2>${displayedQuestion.quote}</h2>`;
 }
 // Take onClick value and the question
-document.clickedName = clickedName;
-document.finalTest = finalTest;
 function clickedName(e) {
-  isItRight(e, theSelectedQuestion.quote);
+  verifyAnswer(e, theSelectedQuestion.quote);
 }
 //remove cards
 function resetCard() {
@@ -113,40 +111,39 @@ function resetCard() {
   element.remove();
 }
 
-function isItRight(question, displayedQuestion) {
-  console.log(counter);
-
-  if (displayedQuestion == question) {
+//verfiying if my answer is correct
+function verifyAnswer(question, myAnswer) {
+  if (myAnswer == question) {
     counter++;
     counterDisplay(counter);
     resetCard();
-    console.log(counter);
-
     shuffle(quotesArray);
   }
-  if (displayedQuestion == question && counter == 2) {
+  if (myAnswer == question && counter == 2) {
     counterSpan.innerText = 0;
     resetCard();
     showContent(questionDisplayDiv);
     finalTestRules();
-    console.log(counter);
   }
-  if (displayedQuestion != question) {
+  if (myAnswer != question) {
     counter = 0;
     counterDisplay(counter);
     resetCard();
     shuffle(quotesArray);
   }
 }
+
+//change the count of how many in a row is correct
 function counterDisplay(counter) {
   counterSpan.innerText = counter;
 }
 
+//runs the final test
 function finalTest(e) {
-  showContent(fireRound.parentElement);
-  hideContent(welcome);
+  showContent(finalRound.parentElement);
+  hideContent(quizGameDiv);
   hideContent(counterContainer);
-  hideContent(threeInARow);
+  hideContent(firstRoundCleared);
   if (e == "Reindeer") {
     winOrLose();
     restartButtonFunction(e);
@@ -159,38 +156,28 @@ function finalTest(e) {
   }
 }
 
+//runs the final test rules
 function finalTestRules() {
   hideContent(questionDisplayDiv);
   hideContent(counterContainer);
-  showContent(threeInARow);
-  threeInARow.innerHTML = "<h2>Congrats, you won three in a row</h2>";
+  showContent(firstRoundCleared);
+  firstRoundCleared.innerHTML = "<h2>Congrats, you won three in a row</h2>";
   let testDiv = document.createElement("div");
   testDiv.classList.add("card-container");
   testDiv.innerHTML = `<div id='final-rules'><h1> Final Round: click the correct keys to win.<br/> You lose if not entered correctly and or time runs out<br/> <button onclick='finalTest()'>I understand</button></h1></div>`;
-  welcome.append(testDiv);
+  quizGameDiv.append(testDiv);
 }
-
-let hideContent = (e) => {
-  e.classList.add("hide");
-};
-let showContent = (e) => {
-  e.classList.remove("hide");
-};
-let deleteContent = (e) => {
-  e.remove();
-};
-
-shuffle(quotesArray);
-
+// hide final round div
 function winOrLose() {
-  hideContent(fireRound.parentElement);
+  hideContent(finalRound.parentElement);
 }
 
+// reset the game
 function resetGame() {
   let restartButton = document.querySelector("#restart-button");
   body.style.backgroundImage = mainBackground;
   hideContent(counterContainer);
-  hideContent(welcome);
+  hideContent(quizGameDiv);
   hideContent(questionDisplayDiv);
   showContent(homePage);
   deleteContent(restartButton);
@@ -199,9 +186,8 @@ function resetGame() {
   deleteContent(document.querySelector("#rendered-rules"));
   deleteContent(document.querySelector("#final-rules"));
   deleteContent(document.querySelector(".card-container"));
-  shuffle(quotesArray);
 }
-
+// change the body makeup depending on if you win or lose
 function bodyMakeUp(answer) {
   if (answer == "German Shepherd") {
     body.style.backgroundImage = loseBackground;
@@ -217,7 +203,7 @@ function bodyMakeUp(answer) {
     body.style.height = "100vh";
   }
 }
-
+// restarting the page button function
 function restartButtonFunction(e) {
   let restartButton = document.createElement("button");
   restartButton.setAttribute("id", "restart-button");
@@ -230,4 +216,24 @@ function restartButtonFunction(e) {
     restartButton.innerText = "You win, try again?";
   }
   body.append(restartButton);
+}
+//create global varables
+function globalCreator() {
+  window.clickedName = clickedName;
+  window.finalTest = finalTest;
+  window.counter = counter;
+}
+// hide content
+function hideContent(e) {
+  e.classList.add("hide");
+}
+
+//show content
+function showContent(e) {
+  e.classList.remove("hide");
+}
+
+// delete content
+function deleteContent(e) {
+  e.remove();
 }
