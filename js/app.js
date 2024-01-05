@@ -52,7 +52,7 @@ function renderRules() {
   let div = document.createElement("div");
   div.classList.add("game-font");
   div.setAttribute("id", "rendered-rules");
-  div.innerHTML = `<h2>1.Click my answer to select who's the creator of the quote displayed<br/>2.To win the game, you must be correct three times in a row. <br/>3. Good Luck and have fun!</h2>`;
+  div.innerHTML = `<h2>1.Click my answer to select who's the creator of the displayed quote<br/>2.To win the game, you must be correct three times in a row. <br/>3. Good Luck and have fun!</h2>`;
   quizGameDiv.parentElement.append(div);
 }
 // hides the first two pages of the game and display the game
