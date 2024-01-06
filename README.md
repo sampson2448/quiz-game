@@ -15,7 +15,7 @@ Quiz Game: Test Your Wit with Real Quotes! Quiz Game is an stimulating trivia ex
 
 ## Attributions
 
-https://www.kirupa.com/html5/css_transitions_cheatsheet.htm
+https://www.kirupa.com/html5/css_transitions_cheatsheet.html
 
 ## Icebox
 

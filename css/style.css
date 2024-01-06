@@ -13,6 +13,7 @@ button:hover {
 #title {
   text-align: center;
 }
+
 /* -------------------------- Button----------------------------*/
 #opening-button {
   position: fixed;
@@ -26,6 +27,8 @@ button:hover {
 }
 .game-font {
   font-family: "Bungee Spice", sans-serif;
+  background-color: black;
+  opacity: 0.9;
 }
 .hide {
   display: none;
@@ -160,6 +163,8 @@ button {
   text-align: center;
   font-family: "Bungee Spice", sans-serif;
   font-size: 24px;
+  background-color: black;
+  opacity: 0.9;
 }
 /* -------------------------- First Round Cleared  ----------------------------*/
 
@@ -167,6 +172,8 @@ button {
   text-align: center;
   font-family: "Bungee Spice", sans-serif;
   font-size: 24px;
+  background-color: black;
+  opacity: 0.9;
 }
 /* -------------------------- Final Test Rules ----------------------------*/
 #final-rules {
@@ -174,6 +181,8 @@ button {
   text-align: center;
   font-family: "Bungee Spice", sans-serif;
   font-weight: bolder;
+  background-color: black;
+  opacity: 0.9;
 }
 /* -------------------------- Final Test  ----------------------------*/
 #final-round-container {
@@ -189,4 +198,6 @@ button {
   font-family: "Bungee Spice", sans-serif;
   font-size: 35px;
   margin-top: 20vh;
+  background-color: black;
+  opacity: 0.9;
 }
