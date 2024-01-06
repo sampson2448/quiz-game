@@ -6,6 +6,10 @@ Quiz Game: Test Your Wit with Real Quotes! Quiz Game is an stimulating trivia ex
 
 [Play the Quiz Game Here](https://quotesquizgame.netlify.app)
 
+## Planning Material
+
+[Planning Material](https://docs.google.com/document/d/1pvnC_7-QxatBVIJpq0R4DUHvCpT0TIPv7avwQxRDQlk/edit)
+
 ## Technology Used
 
 - HTML

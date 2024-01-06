@@ -9,6 +9,7 @@ const dog = document.querySelector("#dog");
 const deer = document.querySelector("#deer");
 const dogSay = new Audio("../music/dog.mp3");
 const deerSay = new Audio("../music/deer.mp3");
+let countDownDiv = document.querySelector("#countdown-div");
 
 /*------------ Variables ------------*/
 let loseBackground = "url('./imgs/lose.gif')";
@@ -148,13 +149,17 @@ function finalTest(e) {
   if (e == "Reindeer") {
     winOrLose();
     restartButtonFunction(e);
-    bodyMakeUp(e);
+    bodyMakeUp("Reindeer");
+    showContent(countDownDiv);
+
   }
   if (e == "German Shepherd") {
     winOrLose();
     restartButtonFunction(e);
     bodyMakeUp(e);
+
   }
+
 }
 
 //runs the final test rules
@@ -165,7 +170,7 @@ function finalTestRules() {
   firstRoundCleared.innerHTML = "<h2>Congrats, you won three in a row</h2>";
   let testDiv = document.createElement("div");
   testDiv.classList.add("card-container");
-  testDiv.innerHTML = `<div id='final-rules'><h1> Final Round: Choose correctly and you win the game!<br/> Choose incorrectly and you must restart!<br/> <button onclick='finalTest()'>I understand</button></h1></div>`;
+  testDiv.innerHTML = `<div id='final-rules'><h1> Final Round: You have 10 seconds to choose the correct answer, if you choose wrong or the time expires you must restart!<br/> <button onclick='finalTest()'>I understand</button></h1></div>`;
   quizGameDiv.append(testDiv);
 }
 // hide final round div
@@ -187,7 +192,9 @@ function resetGame() {
   deleteContent(document.querySelector("#rendered-rules"));
   deleteContent(document.querySelector("#final-rules"));
   deleteContent(document.querySelector(".card-container"));
+  hideContent(countDownDiv)
 }
+
 // change the body makeup depending on if you win or lose
 function bodyMakeUp(answer) {
   if (answer == "German Shepherd") {
@@ -206,6 +213,19 @@ function bodyMakeUp(answer) {
 }
 // restarting the page button function
 function restartButtonFunction(e) {
+  showContent(countDownDiv);
+
+  let countdown = document.querySelector("#countdown");
+  let countdowntime = 5;
+  let timer = setInterval(function () {
+    countdown.innerText = countdowntime;
+    countdowntime--;
+
+    if (countdowntime < 0) {
+      resetGame();
+      clearInterval(timer);
+    }
+  }, 1000);
   let restartButton = document.createElement("button");
   restartButton.setAttribute("id", "restart-button");
   restartButton.classList.add("restart-button");
@@ -238,3 +258,5 @@ function showContent(e) {
 function deleteContent(e) {
   e.remove();
 }
+
+function myStop() {}

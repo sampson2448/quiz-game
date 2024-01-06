@@ -201,3 +201,12 @@ button {
   background-color: black;
   opacity: 0.9;
 }
+
+#countdown-div {
+  width: 100%;
+  text-align: center;
+  font-family: "Bungee Spice", sans-serif;
+  font-weight: bolder;
+  background-color: black;
+  opacity: 0.9;
+}
