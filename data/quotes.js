@@ -19,7 +19,7 @@ let quotesArray = [{
   img: "./imgs/MarKayla.png"
 },
 {
-  quote: "This suffering for silence shit is for the birds.",
+  quote: "This suffering for silence is for the birds.",
   name: "Jurgen",
   img: "./imgs/Jurgen.png"
 },
